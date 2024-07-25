@@ -26,7 +26,7 @@
       <h1>Tammy Law</h1>
       <!--<p class="tagline">Coding the future, one game at a time</p>-->
       <img
-        src="linkedInpfp_Nero AI_Face.jpeg"
+        src="mylinkedInpfp.jpeg"
         alt="Alex Chen smiling, wearing glasses and a tech t-shirt"
         class="avatar"
         width="200"
@@ -38,29 +38,31 @@
       <section id="about" class="section">
         <h2>About Me</h2>
         <p>
-          I'm Tammy, hi! I'm a sophomore majoring in Computer Science who is constantly exploring new skills
-          and interests. Right now, I'm focused on learning how to create visually appealing and functional web
-          experiences with a focus on user experience and attention to detail.
+          I'm Tammy, hi! I'm a sophomore at Binghamton University majoring in
+          Computer Science who is constantly exploring new skills and interests. I'm currently the Vice President of the Game Development Group.
+          Right now, I'm focused on learning how to create visually appealing
+          and functional web experiences with a focus on user experience and
+          attention to detail.
         </p>
         <p>
           When I'm not coding, I'm usually reading a book from my never-ending
-          to-read list or nerding out over indie horror games.
+          to-read list or nerding out over indie horror games. Currently I am reading erhwhri, playing Inscryption, 
         </p>
-      </section>
-
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <p>School: Binghamton University</p>
-        <p>Expected Graduation: May 2027</p>
-        <p>Dean's List: Fall 2023</p>
-        <p>
-          Relevant Coursework: Linear Algebra, Programming with Objects and Data
-          Structures
-        </p>
-        <p>Positions: Vice President of the Game Development Group</p>
       </section>
 
       <section id="skills" class="section">
+        <h2>Relevant Coursework</h2>
+        <div class="skills">
+          <div class="skill">Linear Algebra</div>
+          <div class="skill">Programming with Objects & Data Structures</div>
+          <div class="skill">Programming and Hardware Fundamentals</div>
+        </div>
+        
+        <h2>Courses in Session</h2>
+        <div class="skills">
+          <div class="skill">Architecture from Programmer's Perspective</div>
+          <div class="skill">Data Stuctures and Algorithms</div>
+        </div>
         <h2>Skills</h2>
         <div class="skills">
           <div class="skill">Java</div>
@@ -81,32 +83,20 @@
         <h2>Projects</h2>
         <div class="projects">
           <div class="project">
-            <h3>Pixel Quest</h3>
+            <h3>GDG Website</h3>
+            <p>HTML | CSS | JS</p>
             <p>
-              A retro-style RPG built with Unity, featuring procedurally
-              generated dungeons and a unique combat system.
+              I'm currently working on a website for my club right now. Stay tuned!
             </p>
           </div>
           <div class="project">
-            <h3>WeatherWizard</h3>
+            <h3>Brooklyn Stoop Sale Invite</h3>
+            <p>HTML | CSS | JS | Google Maps API</p>
             <p>
-              A React-based weather app that not only predicts the weather but
-              also suggests outfits and activities.
+              A one page interactive, shareable, and responsive website created for CodeDex's 24-hour summer hackathon.
             </p>
-          </div>
-          <div class="project">
-            <h3>AlgoVision</h3>
-            <p>
-              An interactive tool to visualize sorting and pathfinding
-              algorithms, built with JavaScript and HTML5 Canvas.
-            </p>
-          </div>
-          <div class="project">
-            <h3>EcoSystem Simulator</h3>
-            <p>
-              A Java application simulating a balanced ecosystem with
-              predator-prey dynamics and environmental factors.
-            </p>
+            <a href="https://github.com/Tammyhi/stoop-sale-invite-site">Github</a>
+            <a href="https://stoop-sale-invite-site.vercel.app">Live Demo</a>
           </div>
         </div>
       </section>
@@ -147,65 +137,11 @@
         </div>
       </section>
     </div>
-    <div id="projectModal" class="modal" style="display: none">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-      </div>
-    </div>
     <script>
       document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         alert("This doesn't work just yet, but thanks for your message!");
       });
-      // Modal functionality for projects
-      const modal = document.getElementById("projectModal");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalDescription = document.getElementById("modalDescription");
-      const span = document.getElementsByClassName("close")[0];
-
-      const projectDetails = {
-        pixelquest: {
-          title: "Pixel Quest",
-          description:
-            "Pixel Quest is a charming retro-style RPG built with Unity. It features procedurally generated dungeons, a unique turn-based combat system, and pixel art graphics that will transport you back to the golden age of gaming. Players can customize their character, collect loot, and embark on epic quests in a world filled with quirky NPCs and challenging bosses.",
-        },
-        weatherwizard: {
-          title: "WeatherWizard",
-          description:
-            "WeatherWizard is not your average weather app. Built with React and leveraging modern APIs, it not only provides accurate weather forecasts but also suggests outfits and activities based on the weather. It features a clean, intuitive UI with animated weather icons, hourly and weekly forecasts, and even integrates with your calendar to help plan your outdoor activities.",
-        },
-        algovision: {
-          title: "AlgoVision",
-          description:
-            "AlgoVision is an interactive tool designed to help students and coding enthusiasts visualize complex algorithms. Built with JavaScript and HTML5 Canvas, it allows users to see step-by-step animations of various sorting and pathfinding algorithms. Users can adjust the speed, input their own data sets, and even compare the performance of different algorithms side by side.",
-        },
-        ecosystem: {
-          title: "EcoSystem Simulator",
-          description:
-            "The EcoSystem Simulator is a Java application that models a balanced ecosystem. It simulates predator-prey dynamics, environmental factors like climate and resource availability, and allows users to tweak parameters to see how they affect the ecosystem's balance. The simulation uses object-oriented programming principles and provides both text-based and graphical outputs of the ecosystem's state over time.",
-        },
-      };
-
-      document.querySelectorAll(".project").forEach((project) => {
-        project.addEventListener("click", function () {
-          const projectId = this.getAttribute("data-project");
-          modalTitle.textContent = projectDetails[projectId].title;
-          modalDescription.textContent = projectDetails[projectId].description;
-          modal.style.display = "block";
-        });
-      });
-
-      span.onclick = function () {
-        modal.style.display = "none";
-      };
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
     </script>
   </body>
 </html>
